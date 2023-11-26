@@ -1,0 +1,92 @@
+body{
+   background: url(https://static.vecteezy.com/system/resources/previews/005/332/380/non_2x/group-of-funny-cartoon-dinosaurs-in-the-jungle-free-vector.jpg) no-repeat center top;
+   background-size: cover;
+   position: static;
+   margin: 0;
+   padding: 0;
+   width: 100%
+}
+
+article{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-style: solid;
+    border-color: #BBB372;
+}
+
+input[type="submit"] {
+    background-color: #CCD264;
+    color: #fff;
+    cursor: pointer;
+    border:none;
+}
+
+.button-login {
+    background-color: #CCD264;
+    color: #000;
+    cursor: pointer;
+    border:none;
+    padding: 10px;
+    margin-left: 40px
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+input[type="submit"]:hover {
+    background-color: blueviolet;
+}
+
+.button-login:hover {
+    background-color: blueviolet; 
+    color: #fff; 
+}
+
+.button-login a:hover {
+    color: #fff; 
+}
+
+
+@media (min-width: 768px) {
+    form {
+        width: 400px;
+    }
+}
+
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-left:5px;
+}
+
+.checkboxRegister{
+    display: flex;
+    
+}

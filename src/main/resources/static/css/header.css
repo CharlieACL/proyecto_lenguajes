@@ -1,0 +1,356 @@
+.body1{
+   background: url(https://static.vecteezy.com/system/resources/previews/005/332/380/non_2x/group-of-funny-cartoon-dinosaurs-in-the-jungle-free-vector.jpg) no-repeat center top;
+   background-size: cover;
+   position: static;
+   margin: 0;
+   padding: 0;
+   width: 100%;
+}
+
+.body2{
+   background: url(https://static.vecteezy.com/system/resources/previews/001/922/079/original/kids-baby-pattern-with-cute-dinosaurs-concept-free-vector.jpg) no-repeat center top;
+   background-size: cover;
+   position: absolute;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+.bodyProfesor{
+    min-height: 100vh;
+    background: linear-gradient(rgba(2555, 255, 255, 0.35), rgba(2555, 255, 255, 0.35)),
+    url(https://s2.ppllstatics.com/elcorreo/www/multimedia/202201/19/media/cortadas/los-nuevos-retos-para-los-profesores-kl7F-U1605946132329zF-1248x770@El%20Correo.jpg) no-repeat center
+    center fixed;
+    background-size: cover;
+
+}
+.bodyContac{
+   background: url(https://i.pinimg.com/originals/1c/2f/39/1c2f39e81f9854d89180d74134ba7775.jpg) no-repeat center top;
+   background-size: cover;
+   position: absolute;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+
+.nav-item .nav-link{
+    color: white;
+}
+
+.nav-item .nav-link:hover{
+    background-color: #F2FD3A;
+    font-size: 22px;
+    color: blueviolet;
+    transition: 0.1s;
+    border: 2px; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+
+.dropdown-menu .dropdown-item{
+    font-size: 20px;
+    color: blueviolet;   
+}
+
+.dropdown-menu .dropdown-item:hover{
+    background-color: blueviolet;
+    color: white
+}
+
+.active:empty{
+    background-color: #F2FD3A;
+}
+.cuadrado{
+    position: static;
+    top: 75%;
+    width: 100%;
+    height: 44%;
+    background-color: #BBB372;
+}
+
+.squareWhite{
+    position: static;
+    top: 78%;
+    width: 70%;
+    height: 50%;
+    background-color: white;
+    margin: -1% 0 0 15%;
+}
+
+.coordinadora{
+    border-radius: 100%;
+    width: 165px;
+    height: 165px;
+    margin: 2% 0 0 12%;
+}
+
+.director{
+    border-radius: 100%;
+    width: 165px;
+    height: 165px;
+    margin: 2% 0 0 20%;
+}
+
+.pediatra{
+    border-radius: 100%;
+    width: 165px;
+    height: 165px;
+    margin: 2% 0 0 18%;
+}
+
+.estudiante{
+    border-radius: 100%;
+    width: 100%;
+    height: 140px;
+}
+
+.perfil{
+    border-image:  100%;
+    position: absolute;
+    width: 18%;
+    height: 12%;
+    margin: -3% 0 3% 28%
+}
+
+.mis{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 15%;
+}
+
+.obj{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 48%;
+}
+
+.val{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin: -2% 0 0 80%;
+}
+
+.pie1{
+    opacity: 15%;
+    width: 200px;
+    height: 200px;
+    margin: 2% 0 0 10%;
+}
+
+.pie2{
+    opacity: 15%;
+    width: 200px;
+    height: 200px;
+    margin: 2% 0 0 18%;
+}
+
+.pie3{
+    opacity: 15%;
+    width: 200px;
+    height: 200px;
+    margin: 2% 0 0 16%;
+}
+
+.cuadrado1{
+    position: static;
+    margin: 0 0 0 7%;
+    top: 75%;
+    width: 90%;
+    height: 44%;
+    background-color: #ff6666;
+}
+.cuadrado2{
+    position: static;
+    margin: 0 0 0 7%;
+    top: 75%;
+    width: 90%;
+    height: 44%;
+    background-color: #ff99ff;
+}
+.cuadrado3{
+    position: static;
+    margin: 0 0 0 7%;
+    top: 75%;
+    width: 90%;
+    height: 44%;
+    background-color: #ffcc66;
+}
+
+.arte{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 15%;
+}
+
+.plog{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 48%;
+}
+
+.comu{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin: -2% 0 0 80%;
+}
+
+.cuadro{
+    position: static;
+    margin: 0 0 0 7%;
+    top: 75%;
+    width: 90%;
+    height: 44%;
+    background-color: white;
+}
+.cuadroP{
+    position: static;
+    margin: 0 0 0 30%;
+    margin-top: 2%;
+    width: 40%;
+    height: 44%;
+    background-color: #F0F4BB;
+}
+.cuadroP1{
+    position: static;
+    margin: 0 0 0 13%;
+    width: 80%;
+    height: 44%;
+    background-color: #F0F4BB;
+}
+.cuadroN1{
+    position: static;
+    margin: 0 0 0 13%;
+    width: 80%;
+    height: 44%;
+    background-color: #FFFFFF95;
+}
+.cuadroN2{
+    
+    position: static;
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 20%;
+    background-color: #F0F4BB;
+}
+
+
+.input{
+    border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.inputC{
+    border: 2px solid blue; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.inputP{
+    border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.inputP1{
+    border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.inputN1{
+    border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.redondear{
+   border-radius: 100%;
+   width: 90px;
+   height: 90px;
+   margin: 0 0 0 0; 
+}
+.userL{
+    position: absolute;
+    border-radius: 50%;
+    width: 18vh;
+    height: 17vh;
+    margin: -32% 0 0 25%;
+}
+
+.btn:hover{
+    color: white;
+    font-size: 100%;
+}
+
+/*-----------------------------------------------------------------------------*/
+.article-login{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-style: solid;
+    border-color: #BBB372;
+}
+
+.input[type="submit"] {
+    background-color: #CCD264;
+    color: #fff;
+    cursor: pointer;
+    border:none;
+}
+
+.button-login {
+    background-color: #CCD264;
+    color: #000;
+    cursor: pointer;
+    border:none;
+    padding: 10px;
+    margin-left: 40px
+}
+
+.a{
+    text-decoration: none;
+    color: #000;
+}
+
+.input[type="submit"]:hover {
+    background-color: blueviolet;
+}
+
+.button-login:hover {
+    background-color: blueviolet; 
+    color: #fff; 
+}
+
+.button-login a:hover {
+    color: #fff; 
+}
+
+@media (min-width: 768px) {
+    .form {
+        width: 400px;
+    }
+}
