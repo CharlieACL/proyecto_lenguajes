@@ -4,10 +4,9 @@ package com.proyectoLenguajes.Controller;
 import com.proyectoLenguajes.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 
 @Controller
@@ -26,8 +25,8 @@ public class UsuarioController {
     }
 
     @PostMapping("/crear-usuario")
-    public String insertarUsuario(String username, String contrasena, String correo, String telefono, int estado) {
-        usuarioService.insertarUsuario(username, contrasena, correo, telefono, estado);
+    public String insertarUsuario(String username, String contrasena, String correo, String telefono, int estado,String userRol) {
+        usuarioService.insertarUsuario(username, contrasena, correo, telefono, estado,userRol);
         return "redirect:/registro?exito";
     }
     

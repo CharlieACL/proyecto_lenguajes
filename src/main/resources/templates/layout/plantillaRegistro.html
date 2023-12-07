@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html>
     <head th:fragment="head">
-        <title>JurásicoKids</title>
+        <title>Registrar Usuario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -24,6 +20,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                 <label for="telefono">Teléfono:</label>
                 <input type="text" id="telefono" name="telefono" placeholder="ingrese su numero de telefono" required><br>
+                
+                <label for="userRol">Rol:</label>
+                <select id="userRol" name="userRol" required>
+                    <option value="ROLE_USER">Usuario</option>
+                    <option value="ROLE_ADMIN">Administrador</option>
+                </select><br>
 
                 <div class="checkboxRegister">
                     <label for="estado">Estado:</label>
@@ -31,9 +33,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
                 <input type="submit" value="Crear Usuario">
                 <div  style="background-color:blueviolet;
-                  border-radius: 10px;padding: 10px;font-size: 20px;color: white"
-                      th:if="${param.exito}">El Usuario se ha creado exitosamente! 
+                    border-radius: 10px;padding: 5px;font-size: 15px;color: white"
+                    th:if="${param.exito}">El Usuario se ha creado exitosamente!
+                    
                 </div>
+                <a class="a-login" href="/login">Iniciar Sesión</a>
             </form>
              
         </article>

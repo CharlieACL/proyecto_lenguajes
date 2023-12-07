@@ -37,17 +37,17 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
     }
     
     @Override
-    public void insertarUsuario(String username, String contrasena, String correo, String telefono, int estado) {
+    public void insertarUsuario(String username, String contrasena, String correo, String telefono, int estado,String userRol) {
         try {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             String contrasenaCifrada = passwordEncoder.encode(contrasena);
 
-            int filasAfectadas = jdbcTemplate.update("CALL insertar_usuarios(?, ?, ?, ?, ?)", username, contrasenaCifrada, correo, telefono, estado);
-            System.out.println("Filas afectadas: " + filasAfectadas);
+            jdbcTemplate.update("CALL insertar_usuarios(?, ?, ?, ?, ?)", username, contrasenaCifrada, correo, telefono, estado);
+            System.out.println("Usuarios agregados correctamente");
 
             Long idUsuario = jdbcTemplate.queryForObject("SELECT id_usuario FROM usuarios WHERE username = ?", Long.class, username);
 
-            insertarRol("user", idUsuario);
+            insertarRol(userRol, idUsuario);
 
         } catch (Exception e) {
             System.err.println("Error al insertar los datos en la tabla de usuarios");
@@ -60,10 +60,10 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
     @Override
     public void insertarRol(String nombreRol, Long idUsuario) {
         try{
-
             jdbcTemplate.update("CALL insertar_roles(?, ?)", nombreRol, idUsuario);
             System.out.println("Datos agregados correctamente en la tabla de rol");
-        }catch (Exception e) {
+        }
+        catch (Exception e) {
             System.err.println("Error al insertar los datos en la tabla de rol");
             e.printStackTrace();
         }    

@@ -13,7 +13,6 @@
                 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
                 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
                 <link href="/css/header.css" rel="stylesheet" type="text/css"/>  
-<!--                <link href="/css/registerForm.css" rel="stylesheet" type="text/css"/>-->
     </head>
                 <body>
                     <header th:fragment="header" class="header">
@@ -34,20 +33,17 @@
                                             <ul class="dropdown-menu" style="background-color: #F2FD3A; " aria-labelledby="navbarDropdown">
                                                 <li><a class="dropdown-item" href="/#">Estudiantes</a></li>
                                                 <li><a class="dropdown-item" href="/#">Profesores</a></li>
-                                                <li><a class="dropdown-item" href="/libreta/listado" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR','ROLE_USER')">Libreta Estudiantil</a></li>
+                                                <li><a class="dropdown-item" href="/libreta" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR','ROLE_USER')">Libreta Estudiantil</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link me-4 fs-3"  href="/Matricula" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR','ROLE_USER')">Matricula</a>
+                                        <li class="nav-item" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
+                                            <a class="nav-link me-4 fs-3"  href="/matricula">Matricula</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
                                             <a class="nav-link me-4 fs-3"  href="/#">Contratar</a>      
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link me-4 fs-3"  href="/#">Tienda</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link me-4 fs-3"  href="/#">Servicios</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link me-4 fs-3"  href="/#">Contacto</a>
@@ -71,11 +67,11 @@
                                         <li class="nav-item-r col-md-3 p-3 fs-3" >
                                             <a class="nav-link" href="https://www.instagram.com/jurasicokids/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                                         </li>
-                                        <li class="nav-item-r col-md-3 p-3 fs-3">
+<!--                                        <li class="nav-item-r col-md-3 p-3 fs-3">
                                             <a class="nav-link"><i class="fa-solid fa-user"></i></a>
-                                        </li>
+                                        </li>-->
                                         <li class="nav-item-r col-md-3 p-3 fs-4" style=" margin-top: 3%">
-                                            <form method="POST" th:action="@{/logout}">
+                                            <form class="logout" method="POST" th:action="@{/logout}">
                                                 <button class="nav-link" style="background: none;border:none "><i class="fas fa-sign-out-alt"></i></button>
                                             </form>
                                         </li>

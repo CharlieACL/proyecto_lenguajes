@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Matricular Estudiante</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="">
+        <article class="article-matri" th:fragment="registerStudent" >
+            <form class="form-matri" th:action="@{/matricular-estudiante}" method="post">
+                <h2 >Matricular Nuevo Estudiante</h2>
+                <div style="display: flex;">
+                    <div style="padding-right: 100px">
+                        <label for="nombre">Nombre del Encargado</label>
+                        <input type="text" id="nombre" name="nombre" required><br>
+
+                        <label for="apellido">Apellido del Encargado</label>
+                        <input type="text" id="apellido" name="apellido" required><br>
+
+                        <label for="telefono">Telefono de Emergencia</label>
+                        <input type="text" id="telefono" name="telefono" required><br>
+
+                        <label for="correo">Correo Electronico</label>
+                        <input type="email" id="correo" name="correo" required><br>
+
+                        <label for="direccion">Dirección del Hogar</label>
+                        <input type="text" id="direccion" name="direccion" required><br>
+                        
+                    </div>
+                    
+                    <div>
+                        <label for="nombreEst">Nombre del Estudiante</label>
+                        <input type="text" id="nombreEst" name="nombreEst" required><br>
+
+                        <label for="apellidoEst">Apellido del Estudiante</label>
+                        <input type="text" id="apellidoEst" name="apellidoEst" required><br>
+
+                        <label for="nivelEst">Nivel del Estudiante</label>
+                        <input type="text" id="nivelEst" name="nivelEst" required><br>
+
+                        <label for="alegiasEst">Alergias que padezca</label>
+                        <input type="text" id="alegiasEst" name="alegiasEst" required><br>
+
+                        <label for="condicionEst">Condicion Especial</label>
+                        <input type="text" id="condicionEst" name="condicionEst" required><br>
+                        
+                        <label for="edadEst">Edad del Estudiante</label>
+                        <input type="number" id="edadEst" name="edadEst" required><br>
+                    </div>
+                </div>
+                <input type="submit" value="Matricular Nuevo Estudiante">
+                <div  style="font-size: 18px;color: blueviolet"
+                th:if="${param.exito}">El estudiante ha sido matriculado exitosamente! 
+                </div>
+            </form> 
+        </article>
+    </body>
+</html>

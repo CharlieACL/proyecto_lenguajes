@@ -37,18 +37,14 @@ public class projectConfig implements WebMvcConfigurer{
         http
                 .authorizeHttpRequests((request) -> request
                 .requestMatchers("/", "/index", "/errores/**","/registro/**","/crear-usuario/**",
-                        "/Servicios/**", "/Sedes/**", "/PlanE/**","/EnfoqueH/**","/Tienda/**",
+                        "/libreta/**", "/Sedes/**", "/PlanE/**","/EnfoqueH/**","/Tienda/**",
                         "/Matricula/guardar/**",  "/Actividades/**","/Contactenos/**","/carrito/**",
-                     "/Carrito/**","/Profesores/**", "/webjars/**","/css/**","/img/**")
+                     "/Carrito/**","/Profesores/**", "/webjars/**","/css/**","/img/**","/actualizar-libreta/**")
                 .permitAll()
                 .requestMatchers(
-                        "/Matricula/**","/libreta/**","/carrito/nuevo", "/carrito/guardar","/carrito/agregar",
-                        "/carrito/modificar/**", "/carrito/eliminar/**",
-                        "/libreta/nuevo", "/libreta/guardar/**",
-                        "/libreta/estudiante/**", "/libreta/eliminar/**",
-                        "/usuario/nuevo", "/usuario/guardar",
-                        "/usuario/modificar/**", "/usuario/eliminar/**"
-                ).hasAnyRole("user","admin")
+                        "/matricula/**","/matricular-estudiante/**","/libreta/**","/detalleLibreta/**",
+                        "/actualizar-libreta/**","/eliminar-libreta/**"
+                ).hasAnyRole("USER","ADMIN")
                 )
                 .formLogin((form) -> form
                 .loginPage("/login").permitAll())

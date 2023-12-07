@@ -25,7 +25,7 @@ public class Rol implements Serializable{
     @Column(name="nombre_rol")
     private String nombreRol;
     @Column(name="id_usuario")
-    private String idUsuario;
+    private int idUsuario;
 
     public Rol() {
     }

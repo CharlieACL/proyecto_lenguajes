@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 
 public interface UsuarioService {
-    void insertarUsuario(String username, String contrasena, String correo, String telefono, int estado);
+    void insertarUsuario(String username, String contrasena, String correo, String telefono, int estado,String userRol);
     
     void insertarRol(String nombreRol, Long idUsuario);
     

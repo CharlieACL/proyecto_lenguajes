@@ -1,0 +1,129 @@
+.bodyL{
+   background: url(https://static.vecteezy.com/system/resources/previews/001/922/079/original/kids-baby-pattern-with-cute-dinosaurs-concept-free-vector.jpg) no-repeat center top;
+   background-size: cover;
+   position: static;
+   margin: 0;
+   padding: 0;
+   width: 100%
+}
+
+article{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-container {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #CCD264;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid black;
+    text-align: center;
+}
+
+td {
+    background-color: #ffv;
+    padding: 10px;
+    border: 1px solid black; 
+}
+
+.tarjet-container{
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 15%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 65%;
+    border-collapse: collapse;
+    align-items: center;
+}
+
+.actions-column {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.tarjet{ 
+    margin: 20px auto;
+    width: 100%;
+}
+
+.observaciones-ver{  
+    border-style: solid;
+    border-color: #CCD264;
+    padding: 10px;
+    margin-right: 40px;
+}
+
+.textarea-style{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #CCD264;
+    width: 160%;
+    height: 100px;  
+}
+
+input[type="submit"] {
+    text-align: center;
+    background-color: #CCD264;
+    color: #000;
+    cursor: pointer;
+    border:none;
+}
+
+input[type="submit"]:hover {
+    background-color: blueviolet;
+    color: #fff;
+}
+
+
+.btn{
+    background: #BBB372;
+    color: #eee;
+    font-weight: bold;
+    margin-bottom:  10px;
+}
+
+.btn-delete{
+    color: #ffd; 
+    background-color: #ff6666;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: blueviolet;
+    color: #fff;
+}
+
+.btn-delete:hover{
+    background-color: blueviolet;
+    color: #fff;
+}
+

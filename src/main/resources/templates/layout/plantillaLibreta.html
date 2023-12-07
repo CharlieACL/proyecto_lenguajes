@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Lista de Estudiantes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+   <body>
+    <article th:fragment="listStudents" >
+        <h2 style="text-align: center; margin-top: 20px">Lista de Estudiantes</h2>
+        <table  class="table-container">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="libreta : ${libretas}">
+                    <td class="actions-column" th:text="${libreta.estudiante.idEstudiante}"></td>
+                    <td class="actions-column" th:text="${libreta.estudiante.apellido}"></td>
+                    <td class="actions-column" th:text="${libreta.estudiante.nombre}"></td>
+                    <td class="actions-column">
+                        <a th:href="@{/detalleLibreta/}+${libreta.idLibreta}" class="btn" sec:authorize="hasRole('ROLE_USER')">
+                        <i class="fa-solid fa-book"></i></i> Observar Libreta</a>
+                        
+                        <a th:href="@{/detalleLibreta/}+${libreta.idLibreta}" class="btn" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <i class="fa-solid fa-book"></i></i> Administrar Libreta</a>
+                        
+                        <form th:action="@{/eliminar-libreta/}+${libreta.idLibreta}" method="post">
+                            <button type="submit" class="btn-delete">
+                                <i class="fa-solid fa-trash"></i> Eliminar Libreta
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+    
+    <article th:fragment="studentLibrary">
+        <div class="tarjet-container">
+            <div class="tarjet">
+                <h1>[[${libreta.estudiante.nombre}]] [[${libreta.estudiante.apellido}]]</h1>
+                <br>
+                    <div style="display: flex;width: 100%">
+                        <div>
+                           <div>
+                                <h5 style="text-align: justify">Datos de los Estudiantes:</h5>
+                                <h6 style="text-align: justify"> - Nivel: [[${libreta.estudiante.nivel}]]</h6>
+                                <h6 style="text-align: justify"> - Edad: [[${libreta.estudiante.edad}]]</h6>
+                                <h6 style="text-align: justify"> - Alergias: [[${libreta.estudiante.alergias}]]</h6>
+                                <h6 style="text-align: justify"> - Condicion: [[${libreta.estudiante.condicion}]]</h6>
+                            </div>
+                            <br>
+                                <div>
+                                    <h5 style="text-align: justify">Datos de los Encargados:</h5>
+                                    <h6 style="text-align: justify"> - Nombre del Encargado: [[${libreta.estudiante.encargado.nombre}]] [[${libreta.estudiante.encargado.apellido}]]</h6>
+                                    <h6 style="text-align: justify"> - Télefono: [[${libreta.estudiante.encargado.telefono}]]</h6>
+                                    <h6 style="text-align: justify"> - Correo Eléctronio: [[${libreta.estudiante.encargado.correo}]]</h6>
+                                    <h6 style="text-align: justify"> - Dirección: [[${libreta.estudiante.encargado.direccion}]]</h6>
+                                </div>
+                        </div>
+                        
+                        <!-- Datos Generales que se le muestran a los usuarios -->
+                        <div style="margin-left: 25%" sec:authorize="hasAnyRole('ROLE_USER')">
+                            <div class="observaciones-ver" > 
+                                <h5 style="text-align: justify">Observaciones:</h5>
+                                <h6 style="text-align: justify"> - [[${libreta.observaciones}]]</h6>
+                            </div><br>                           
+                                
+                            <div>
+                                <h6 style="text-align: justify" th:text="${libreta.asistencia} ? 'Presente' : 'Ausente'"/>
+                            </div><br>
+                                
+                            <div>
+                                <img style="align-content: justify" src="../img/dinobaby.png" alt="" width="180px" height="180px"/>
+                            </div>
+                        </div>  
+                        
+                        <!-- Formulario para Actualizar -->
+                        <div style="margin-left: 25%" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <form th:object="${libreta}" th:action="@{/actualizar-libreta}" method="post">
+                                
+                                <input type="hidden" name="idLibreta" th:value="${libreta.idLibreta}">
+                                
+                                <textArea class="textarea-style" type="text" id="observaciones" name="observaciones" 
+                                          placeholder="Ingrese las observaciones del estudiante"></textArea><br>
+
+                                <div style="text-align: justify">
+                                    <input type="checkbox" id="asistencia" name="asistencia"  value="1"> Asistencia<br>
+                                    <input type="checkbox" id="asistencia" name="asistencia"  value="0"> Ausente<br>
+                                </div><br>
+                                <div style="text-align: justify">
+                                    <input type="submit" value="Actualizar Libreta">
+                                </div>
+                            </form>                          
+                        </div>                        
+                    </div>
+            </div> 
+        </div> 
+</body> 
+</html>
+
