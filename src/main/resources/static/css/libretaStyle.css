@@ -6,6 +6,14 @@
    padding: 0;
    width: 100%
 }
+.bodyE{
+   background: url(https://static.vecteezy.com/system/resources/previews/005/332/380/non_2x/group-of-funny-cartoon-dinosaurs-in-the-jungle-free-vector.jpg) no-repeat center top;
+   background-size: cover;
+   position: static;
+   margin: 0;
+   padding: 0;
+   width: 100%
+}
 
 article{
     margin: 0;
@@ -127,3 +135,57 @@ input[type="submit"]:hover {
     color: #fff;
 }
 
+.article-matri{
+    margin: 15px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-matri{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    position: absolute;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-style: solid;
+    border-color: #BBB372;
+    margin-left: 10px
+}
+
+.input[type="submit"] {
+    font-weight: bold;
+    background-color: #CCD264;
+    color: #000;
+    cursor: pointer;
+    border:none;
+    width: 80%;
+}
+
+.button-login {
+    background-color: #CCD264;
+    color: #000;
+    cursor: pointer;
+    border:none;
+    padding: 10px;
+    margin-left: 40px
+}
+
+
+@media (min-width: 768px) {
+    .form-matri {
+        width: 550px;
+    }
+}

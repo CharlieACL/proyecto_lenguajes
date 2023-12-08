@@ -31,8 +31,8 @@
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle me-4 fs-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informacion</a>
                                             <ul class="dropdown-menu" style="background-color: #F2FD3A; " aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="/#">Estudiantes</a></li>
-                                                <li><a class="dropdown-item" href="/#">Profesores</a></li>
+                                                <li><a class="dropdown-item" href="/listaEstudiantes" sec:authorize="hasRole('ROLE_ADMIN')">Estudiantes</a></li>
+                                                <li><a class="dropdown-item" href="/#" sec:authorize="hasRole('ROLE_ADMIN')">Profesores</a></li>
                                                 <li><a class="dropdown-item" href="/libreta" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR','ROLE_USER')">Libreta Estudiantil</a></li>
                                             </ul>
                                         </li>

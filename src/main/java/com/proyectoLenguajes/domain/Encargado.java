@@ -25,21 +25,17 @@ public class Encargado implements Serializable{
 
     
     @OneToMany(mappedBy = "encargado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Estudiantes> estudiantes;
+    private List<Estudiantes> estudiante;
 
     public Encargado() {
     }
 
-    public Encargado(String nombre, String apellido, String correo, String telefono, String direccion, List<Estudiantes> estudiantes) {
+    public Encargado(String nombre, String apellido, String correo, String telefono, String direccion, List<Estudiantes> estudiante) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.estudiantes = estudiantes;
-    }
-
-    
-    
-    
+        this.estudiante = estudiante;
+    }    
 }

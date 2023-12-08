@@ -37,6 +37,11 @@ public class LibretaServiceImpl implements LibretaService{
     public List<Libreta> getAllLibretas() {
         return libretaDao.findAll();
     }
+    
+    @Override
+    public Estudiantes getEstudiantesById(Long id) {
+        return estudiantesDao.findById(id).orElse(null);
+    }
 
     @Override
     public Libreta getLibretaById(Long id) {
@@ -55,16 +60,33 @@ public class LibretaServiceImpl implements LibretaService{
         } 
     }
 
+    @Override
+    public void actualizarEstudiante(Long idEncargado, String nombreEn, String apellidoEn, String telefono, String correo, String direccion, 
+            Long idEstudiante, String nombreEst, String apellidoEst, String nivel, String alergias, String condicion, int edad) {
+        try{    
+        jdbcTemplate.update("CALL  actualizar_estudiante(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        idEncargado,nombreEn,apellidoEn,telefono,correo,direccion,
+        idEstudiante,nombreEst,apellidoEst,nivel,alergias,condicion,edad);
+            System.out.println("Estudiante actualizado exitosamente");
+        }
+        catch (Exception e) {
+        System.err.println("Error al actualizar los datos del estudiante");
+        e.printStackTrace();
+        } 
+    }
+    
     @Transactional
     @Override
-    public void eliminarLibreta(Long idLibreta) {
+    public void eliminarEstudianteMatriculado(Long idLibreta) {
         try{    
-        jdbcTemplate.update("CALL  eliminar_libreta(?)",idLibreta);
-            System.out.println("libreta eliminada exitosamente");
+        jdbcTemplate.update("CALL  eliminar_estudiante_matriculado(?)",idLibreta);
+            System.out.println("estudiante eliminada exitosamente");
         }
         catch (Exception e) {
         System.err.println("Error al insertar los datos en la tabla de estudiantes");
         e.printStackTrace();
         } 
     }
+
+    
 }

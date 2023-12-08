@@ -30,6 +30,13 @@ public class LibretaController {
         this.libretaService = libretaService;
     }
     
+    @GetMapping("/listaEstudiantes")
+    public String listaEstudiantes(Model model){
+        List<Estudiantes> estudiantes = libretaService.obtenerTodosEstudiantes();
+        model.addAttribute("estudiantes", estudiantes);
+        return "listaEstudiantes";
+    }
+    
     @GetMapping("/libreta")
     public String mostrarLibretas(Model model) {
         List<Libreta> libretas = libretaService.getAllLibretas();
@@ -44,15 +51,35 @@ public class LibretaController {
         return "detalleLibreta";
     }
     
+    @GetMapping("/detalleEstudiante/{id}")
+    public String detalleEstudiante(@PathVariable Long id, Model model) {
+        Estudiantes estudiante = libretaService.getEstudiantesById(id);
+        model.addAttribute("estudiante", estudiante);
+        return "detalleEstudiante";
+    }
+    
     @PostMapping("/actualizar-libreta")
-    public String actualidarLibreta( @RequestParam Long idLibreta, @RequestParam int asistencia, @RequestParam String observaciones){
+    public String actualidarLibreta(@RequestParam Long idLibreta, @RequestParam int asistencia, @RequestParam String observaciones){
         libretaService.actualizarLibreta(idLibreta, asistencia, observaciones);
         return "redirect:/libreta";
     }
     
+    @PostMapping("/actualizar-estudiante")
+    public String actualidarEstudiante(@RequestParam Long idEncargado, @RequestParam String nombreEn, @RequestParam String apellidoEn, @RequestParam String telefono, @RequestParam String correo, @RequestParam String direccion, 
+           @RequestParam Long idEstudiante, @RequestParam String nombreEst, @RequestParam String apellidoEst, @RequestParam String nivel, @RequestParam String alergias, @RequestParam String condicion, @RequestParam int edad){ 
+        try {
+         libretaService.actualizarEstudiante(idEncargado, nombreEn, apellidoEn, telefono, correo, direccion, 
+         idEstudiante, nombreEst, apellidoEst, nivel, alergias, condicion, edad);   
+         return "redirect:/libreta";
+     } catch (Exception e) {
+         e.printStackTrace();
+         return "redirect:/error";  
+     }
+    }
+    
     @PostMapping("/eliminar-libreta/{id}")
     public String eliminarLibreta(@PathVariable Long id){
-        libretaService.eliminarLibreta(id);
+        libretaService.eliminarEstudianteMatriculado(id);
         return "redirect:/libreta";
     }
 }

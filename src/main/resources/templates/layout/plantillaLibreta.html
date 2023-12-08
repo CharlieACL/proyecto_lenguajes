@@ -9,7 +9,7 @@
 </head>
    <body>
     <article th:fragment="listStudents" >
-        <h2 style="text-align: center; margin-top: 20px">Lista de Estudiantes</h2>
+        <h2 style="text-align: center; margin-top: 20px">Libreta Estudiantil</h2>
         <table  class="table-container">
             <thead>
                 <tr>
@@ -102,7 +102,91 @@
                         </div>                        
                     </div>
             </div> 
-        </div> 
+        </div>
+    </article>
+       
+    <article th:fragment="listaEstudiantes">
+        <h2 style="text-align: center; margin-top: 20px">Estudiantes Matricuados</h2>
+        <table  class="table-container">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Nivel</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="estudiante: ${estudiantes}">
+                    <td class="actions-column" th:text="${estudiante.idEstudiante}"></td>
+                    <td class="actions-column" th:text="${estudiante.nombre}"></td>
+                    <td class="actions-column" th:text="${estudiante.apellido}"></td>
+                    <td class="actions-column" th:text="${estudiante.nivel}"></td>
+                    <td class="actions-column" th:text="${estudiante.encargado.correo}"></td>
+                    <td class="actions-column" th:text="${estudiante.encargado.telefono}"></td>
+                    <td class="actions-column">
+                        <a th:href="@{/detalleEstudiante/}+${estudiante.idEstudiante}" class="btn">
+                        <i class="fa-solid fa-pen"></i> Actualizar Datos</a>
+                        
+                    </td>   
+                </tr>
+            </tbody>
+        </table>
+    </article>
+       
+    <article class="article-matri" th:fragment="detalleEstudiantes">
+        <form class="form-matri" th:object="${estudiante}" th:action="@{/actualizar-estudiante}" method="post">
+                <h2>Actualizar Cambios</h2>
+                <div style="display: flex;">
+                    <div style="padding-right: 100px">
+                        <input class="input" type="hidden" name="idEncargado" th:value="${estudiante.encargado.idEncargado}">
+                        
+                        <label for="nombreEn">Nombre del Encargado</label>
+                        <input class="input" type="text" id="nombreEn" name="nombreEn" th:value="${estudiante.encargado.nombre}"><br>
+
+                        <label for="apellidoEn">Apellido del Encargado</label>
+                        <input class="input" type="text" id="apellidoEn" name="apellidoEn" th:value="${estudiante.encargado.apellido}" ><br>
+
+                        <label for="telefono">Telefono de Emergencia</label>
+                        <input class="input" type="text" id="telefono" name="telefono" th:value="${estudiante.encargado.telefono}"><br>
+
+                        <label for="correo">Correo Electronico</label>
+                        <input class="input" type="email" id="correo" name="correo" th:value="${estudiante.encargado.correo}"><br>
+
+                        <label for="direccion">Dirección del Hogar</label>
+                        <input class="input" type="text" id="direccion" name="direccion" th:value="${estudiante.encargado.direccion}"><br>
+                        
+                    </div>
+                    
+                    <div>
+                        <input type="hidden" name="idEstudiante" th:value="${estudiante.idEstudiante}">
+                        
+                        <label for="nombreEst">Nombre del Estudiante</label>
+                        <input class="input" type="text" id="nombreEst" name="nombreEst" th:value="${estudiante.nombre}"><br>
+
+                        <label for="apellidoEst">Apellido del Estudiante</label>
+                        <input class="input" type="text" id="apellidoEst" name="apellidoEst" th:value="${estudiante.apellido}"><br>
+
+                        <label for="nivel">Nivel del Estudiante</label>
+                        <input class="input" type="text" id="nivel" name="nivel" th:value="${estudiante.nivel}"><br>
+
+                        <label for="alergias">Alergias que padezca</label>
+                        <input class="input" type="text" id="alergias" name="alergias" th:value="${estudiante.alergias}"><br>
+
+                        <label for="condicion">Condicion Especial</label>
+                        <input class="input" type="text" id="condicion" name="condicion" th:value="${estudiante.condicion}"><br>
+                        
+                        <label for="edad">Edad del Estudiante</label>
+                        <input class="input" type="number" id="edad" name="edad" th:value="${estudiante.edad}"><br>
+                                
+                        <input class="input" type="submit" value="Guardar Cambios">
+                    </div>
+                </div>
+            </form>
+    </article>
 </body> 
 </html>
 

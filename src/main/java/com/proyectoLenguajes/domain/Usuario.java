@@ -39,4 +39,4 @@ public class Usuario implements Serializable{
         this.estado = estado;
         this.roles = roles;
     }   
-}
+} 
