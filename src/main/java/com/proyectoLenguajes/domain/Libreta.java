@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "libretaEstudiantil")
+@Table(name = "libreta_estudiantil")
 public class Libreta implements Serializable{
     
     private static final long serialVersionUID = 1L;

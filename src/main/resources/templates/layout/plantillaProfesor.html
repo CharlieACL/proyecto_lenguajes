@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Matricular Estudiante</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="">
+        <article class="article-matri" th:fragment="registerTeacher" >
+            <form class="form-matri" th:action="@{/insertar-profesor}" method="post">
+                <h2 >Contratar Nuevo Profesor</h2>
+                <div style="margin: 0 0 0 60px">
+                    <div style="padding-right: 100px">
+                        <label for="nombre">Nombre del Profesor</label>
+                        <input type="text" id="nombre" name="nombre" required><br>
+
+                        <label for="apellido">Apellido del Profesor</label>
+                        <input type="text" id="apellido" name="apellido" required><br>
+
+                        <label for="telefono">Telefono</label>
+                        <input type="text" id="telefono" name="telefono" required><br>
+
+                        <label for="correo">Correo Electronico</label>
+                        <input type="email" id="correo" name="correo" required><br>
+
+                        <label for="edad">Edad</label>
+                        <input type="text" id="edad" name="edad" required><br>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+                <input type="submit" value="Contratar Nuevo Profesor">
+                
+            </form> 
+        </article>
+        
+        <article th:fragment="listTeacher" >
+        <h2 style="text-align: center; margin-top: 20px">Libreta Estudiantil</h2>
+        <table  class="table-container">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="profesor : ${profesores}">
+                    <td class="actions-column" th:text="${profesor.idProfesor}"></td>
+                    <td class="actions-column" th:text="${profesor.apellido}"></td>
+                    <td class="actions-column" th:text="${profesor.nombre}"></td>
+                    <td class="actions-column" th:text="${profesor.correo}"></td>
+                    <td class="actions-column">
+                        <a th:href="@{/detalle-profesor/}+${profesor.idProfesor}" class="btn" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <i class="fa-solid fa-book"></i></i> Administrar Profesor</a>
+                       
+                        
+                        <form th:action="@{/eliminar-profesor/}+${profesor.idProfesor}" method="post">
+                            <button type="submit" class="btn-delete">
+                                <i class="fa-solid fa-trash"></i> Eliminar Profesor
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+        
+    <article class="article-matri" th:fragment="updateTeacher">
+        <form class="form-matri" th:action="@{/actualizar-profesor}" method="post" th:object="${profesor}">
+                <h2 >Actualizar Nuevo Profesor</h2>
+                <div style="margin: 0 0 0 70px">
+                    <div style="padding-right: 100px">
+                        
+                        <input type="hidden" name="idProfesor" th:value="${profesor.idProfesor}">
+                        
+                        <label for="nombre">Nombre del Profesor</label>
+                        <input type="text" id="nombre" name="nombre" th:value="${profesor.nombre}"><br>
+
+                        <label for="apellido">Apellido del Profesor</label>
+                        <input type="text" id="apellido" name="apellido" th:value="${profesor.apellido}"><br>
+
+                        <label for="telefono">Telefono</label>
+                        <input type="text" id="telefono" name="telefono" th:value="${profesor.telefono}"><br>
+
+                        <label for="correo">Correo Electronico</label>
+                        <input type="email" id="correo" name="correo" th:value="${profesor.correo}"><br>
+
+                        <label for="edad">Edad</label>
+                        <input type="text" id="edad" name="edad" th:value="${profesor.edad}"><br>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+                <input type="submit" value="Confirmar Actualización">
+                
+            </form> 
+        
+    </article>
+    </body>
+</html>
