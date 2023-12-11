@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <article class="article-matri" th:fragment="registerContact" >
+            <form class="form-matri" th:action="@{/insertar-contactenos}" method="post">
+                <h2 >Contactenos</h2>
+                <div style="margin: 0 0 0 70px">
+                    <div style="padding-right: 100px">
+                        <label for="correo">Correo Electronico</label>
+                        <input type="email" id="correo" name="correo" required><br>
+                        
+                        <label for="telefono">Telefono</label>
+                        <input type="text" id="telefono" name="telefono" required><br>
+
+                        <label for="mensaje">Mensaje</label>
+                        <input type="text" id="mensaje" name="mensaje" required><br>
+                        
+                    </div>
+                    
+                </div>
+                <input type="submit" value="Enviar Mensaje">
+               
+            </form> 
+        </article>
+    </body>
+</html>

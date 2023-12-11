@@ -38,13 +38,15 @@ public class projectConfig implements WebMvcConfigurer{
                 .authorizeHttpRequests((request) -> request
                 .requestMatchers("/", "/index", "/errores/**","/registro/**","/crear-usuario/**",
                         "/libreta/**","/profesor/**", "/webjars/**","/css/**","/img/**","/actualizar-libreta/**",
-                     "/actualizar-estudiante/**","/insertar-profesor/**","/eliminar-profesor/**")
+                     "/actualizar-estudiante/**","/insertar-profesor/**","/eliminar-profesor/**","/insertar-contactenos/**",
+                     "/contactenos/**")
                 .permitAll()
                 .requestMatchers(
                         "/matricula/**","/matricular-estudiante/**","/libreta/**","/detalleLibreta/**",
                         "/actualizar-libreta/**","/eliminar-libreta/**","/listaEstudiantes/**","/detalleEstudiante/**",
                         "/actualizar-estudiante/**","/insertar-profesor/**","/profesor/**","/lista-profesor/**",
-                        "/detalle-profesor/**","/actualizar-profesor/**","/eliminar-profesor/**")
+                        "/detalle-profesor/**","/actualizar-profesor/**","/eliminar-profesor/**","/contactenos/**",
+                        "/insertar-contactenos/**")
                 .hasAnyRole("USER","ADMIN")
                 )
                 .formLogin((form) -> form
